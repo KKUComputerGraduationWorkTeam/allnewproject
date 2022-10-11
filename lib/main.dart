@@ -5,7 +5,7 @@ import 'package:untitled/screens/category.dart';
 import 'package:untitled/screens/write.dart';
 import 'package:untitled/screens/chat_screen.dart';
 import 'package:untitled/screens/mypage.dart';
-//import 'package:cupertino_icons/cupertino_icons.dart';
+
 
 void main() => runApp(MyApp()); //main에서 MyApp이란 클래스를 호출한다.
 
@@ -31,10 +31,10 @@ class _MyPageState extends State<MyPage> {
   int currentIndex = 0;
   final screens = [
     //이게 하나하나의 화면이되고, Text등을 사용하거나, dart파일에 있는 class를 넣는다.
-    Main(),
+    Home(),
     Category(),
     Writing(),
-    const Chat(),
+    Chat(),
     UserInfo(),
   ];
   @override
@@ -57,10 +57,10 @@ class _MyPageState extends State<MyPage> {
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.black.withOpacity(.60),
 
-        items: const [
+        items: [
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home, size: 30),
-            label: 'Main',
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.cart, size: 30),
