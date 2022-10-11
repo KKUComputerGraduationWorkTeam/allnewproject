@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text('home screen'),
+        title: Text('안녕하세요. ${FirebaseAuth.instance.currentUser!.displayName} 님 ! '),
         actions: [
           IconButton(
             icon: Icon(
