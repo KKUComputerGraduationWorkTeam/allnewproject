@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled/screens/home.dart';
 import 'package:untitled/screens/category.dart';
 import 'package:untitled/screens/write.dart';
-import 'package:untitled/screens/chat_screen.dart';
+import 'package:untitled/chatting/chat_screen.dart';
 import 'package:untitled/screens/mypage.dart';
 
 
@@ -34,7 +34,7 @@ class _MyPageState extends State<MyPage> {
     Home(),
     Category(),
     Writing(),
-    Chat(),
+    ChatScreen(),
     UserInfo(),
   ];
   @override

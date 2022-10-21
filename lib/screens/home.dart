@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
         actions: [
           IconButton(
             icon: Icon(
-              Icons.exit_to_app_sharp,
+              Icons.logout,
               color: Colors.white,
             ),
             onPressed: () async {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/chat_model.dart';
+import 'chat_model.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key, required this.user}) : super(key: key);

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled/config/palette.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:untitled/login/add_image/add_image.dart';
 import 'package:untitled/login/service/firebase_service.dart';
 import '../main.dart';
 
@@ -46,6 +47,18 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
     if (isValid) {
       _formKey.currentState!.save();
     }
+  }
+
+  void showAlert(BuildContext context){
+    showDialog(
+        context: context,
+        builder: (context){
+          return Dialog(
+            backgroundColor: Colors.white,
+            child: AddImage()
+          );
+        },
+    );
   }
 
   @override
@@ -159,9 +172,10 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                             ? Colors.black
                                             : Colors.black54),
                                   ),
+
                                   if (!isSignupScreen) //회원가입 기능
                                     Container(
-                                      margin: EdgeInsets.only(top: 3),
+                                      margin: EdgeInsets.fromLTRB(0,3,35,0),
                                       height: 2,
                                       width: 55,
                                       color: Colors.redAccent,
@@ -227,6 +241,15 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                       userName = value;
                                     },
                                     decoration: InputDecoration(
+                                        suffixIcon: (
+                                          IconButton(
+                                           icon: Icon(Icons.image,
+                                           ),
+                                            onPressed: (){
+                                              return showAlert(context);
+                                            },
+                                          )
+                                        ),
                                         prefixIcon: Icon(
                                           Icons.account_circle,
                                           color: Palette.iconColor,
@@ -249,7 +272,8 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                         hintStyle: TextStyle(
                                             fontSize: 14,
                                             color: Palette.textColor1),
-                                        contentPadding: EdgeInsets.all(10)),
+                                        contentPadding: EdgeInsets.all(8)
+                                    ),
                                   ),
                                   SizedBox(
                                     height: 8,
@@ -592,7 +616,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                   ),
                 ),
               ),
-              //전송버튼
+              //전송 버튼
               AnimatedPositioned(
                 duration: Duration(milliseconds: 300),
                 curve: Curves.easeIn,
